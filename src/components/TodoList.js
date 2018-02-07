@@ -8,18 +8,34 @@ class TodoList extends Component {
       todos: [],
       newTodo: '',
     };
-    console.log('TodoList');
   }
+  addTodo = (event) => {
+    event.preventDefault();
+    const todo = this.state.todos;
+    todo.push(this.state.newTodo);
+    const newTodos = [...todo];
+    console.log(newTodos);
+    this.setState({
+      todos: newTodos,
+      newTodo: '',
+    });
+  };
+  updateTodo = (event) => {
+    this.setState({
+      newTodo: event.target.value,
+    });
+  };
   render() {
     return (
-      <div>
+      <div className="todo-list">
         <ul>
           {this.state.todos.map((todo, i) => {
-            return <li key={i}>{ todo }</li>
+            return <Todo key={i} todo={todo} />
           })}
         </ul>
-        <form>
-          <input type="text" placeholder="New Todo" />
+        <form onSubmit={this.addTodo}>
+          <input id="todo-input" type="text" placeholder="New Todo" onChange={this.updateTodo} />
+          <input type="submit" value="Add" />
         </form>
       </div>
     )
