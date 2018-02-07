@@ -1,0 +1,39 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  background: #f7f7f7;
+}
+
+h2 {
+  text-align: center;
+}
+
+.todo-list {
+  width: 400px;
+  margin: auto;
+}
+
+.todo-list input[type="text"] {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  font-size: 14px;
+  margin: 0;
+  font-weight: 400;
+  text-decoration: none;
+  color: #212121;
+}
+
+.todo-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.todo-list ul li {
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 25px 10px;
+  border-left: 10px solid #f66e73;
+  display: block;
+  color: #212121;
+  background: #fff;
+}

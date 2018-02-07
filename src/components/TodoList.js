@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
+import './style.css';
 
 class TodoList extends Component {
   constructor() {
@@ -27,16 +28,16 @@ class TodoList extends Component {
   render() {
     return (
       <div className="todo-list">
-        <ul>
-          {this.state.todos.map((todo, i) => {
-            return <Todo key={i} todo={todo} />
-          })}
-        </ul>
         <form onSubmit={this.addTodo}>
           <input id="todo-input" type="text"
             placeholder="New Todo" onChange={this.updateTodo}
             value={this.state.newTodo} />
         </form>
+        <ul>
+          {this.state.todos.map((todo, i) => {
+            return <Todo key={i} todo={todo} />
+          })}
+        </ul>
       </div>
     )
   }
