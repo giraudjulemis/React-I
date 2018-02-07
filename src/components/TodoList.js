@@ -14,7 +14,6 @@ class TodoList extends Component {
     const todo = this.state.todos;
     todo.push(this.state.newTodo);
     const newTodos = [...todo];
-    console.log(newTodos);
     this.setState({
       todos: newTodos,
       newTodo: '',
@@ -34,13 +33,9 @@ class TodoList extends Component {
           })}
         </ul>
         <form onSubmit={this.addTodo}>
-          <input
-            id="todo-input"
-            type="text"
-            placeholder="New Todo"
-            onChange={this.updateTodo}
+          <input id="todo-input" type="text"
+            placeholder="New Todo" onChange={this.updateTodo}
             value={this.state.newTodo} />
-          <input type="submit" value="Add" />
         </form>
       </div>
     )
